@@ -1,0 +1,45 @@
+AUTORENT - INTERFAZ WEB
+
+1. Copia index.html en src/main/resources/static de tu proyecto IntelliJ.
+2. Si no existe static, crea esa carpeta dentro de resources.
+3. Reinicia AutorentApplication y abre http://localhost:8080/.
+4. No abras el HTML con doble clic: necesita el servidor Spring Boot.
+
+Incluye registro de autos y clientes, creacion/finalizacion de alquileres,
+consultas por ID, lista y filtro local de autos disponibles, y respuesta HTTP/JSON.
+No requiere cambiar pom.xml ni instalar bibliotecas.
+
+Prueba: registra un auto y un cliente; sus IDs se rellenan en el formulario
+ de alquiler. Elige los dias y crea el alquiler. El auto desaparecera de
+ disponibles. Finaliza usando el ID del alquiler; el auto reaparecera.
+Los datos dependen de H2 y se pierden al reiniciar el backend.
+
+Los campos de deposito, kilometraje, baja y mantenimiento de la imagen de
+ referencia no se incluyen porque la API actual no ofrece esas operaciones.
+
+Verificacion: sintaxis JavaScript y pruebas de solicitudes/respuestas simuladas
+(201, 409, respuesta no JSON y desconexion). Pendiente prueba visual e integracion
+con el backend real: el navegador de revision no pudo acceder al servidor local.
+
+//como funciona este codigo?
+//Este código es un archivo HTML que sirve como interfaz de usuario para un sistema de gestión de alquiler de vehículos llamado "AutoRent". A continuación, te explico cómo funciona:
+1. **Estructura del Documento**:
+   - El documento HTML está estructurado con etiquetas `<html>`, `<head>`, y `<body>`. Dentro del `<head>`, se incluyen metadatos, el título de la página y estilos CSS para el diseño visual.
+   - El `<body>` contiene la interfaz principal, incluyendo un encabezado, un área principal con formularios para registrar vehículos y clientes, crear y finalizar alquileres.
+2. **Estilos CSS**:
+   - Los estilos CSS definen la apariencia de los elementos en la página, como colores, fuentes, tamaños, márgenes y disposición de los elementos. Se utilizan clases y selectores para aplicar estilos específicos a diferentes partes de la interfaz.
+3. **Formulario de Registro**:
+   - Hay formularios para registrar vehículos y clientes, así como para crear y finalizar alquileres. Cada formulario tiene campos de entrada (input) para capturar información relevante, como placa del vehículo, marca, modelo, año, precio por día, nombre del cliente, documento, teléfono y correo electrónico.
+4. **Interactividad con JavaScript**:
+   - Se utiliza JavaScript para manejar la interactividad de la página. Esto incluye:
+     - Validación de formularios: Antes de enviar los datos al servidor, se validan los campos para asegurarse de que estén completos y sean correctos.
+     - Comunicación con la API: Se realizan solicitudes HTTP a la API del servidor para registrar vehículos, clientes y alquileres, así como para consultar registros y finalizar alquileres. Esto se hace mediante la función `api`, que utiliza `fetch` para enviar y recibir datos en formato JSON.
+     - Actualización de la interfaz: La lista de vehículos disponibles se actualiza dinámicamente en función de los datos recibidos del servidor.
+5. **Manejo de Errores y Notificaciones**:
+   - Se muestran mensajes de notificación al usuario para informar sobre el estado de las operaciones, como éxito o error, utilizando un elemento `<div>` con la clase `notice`.
+6. ** Consola de Respuesta**:
+   - Hay una sección de consola que muestra la respuesta de la API, incluyendo el método HTTP, la ruta, el estado y la respuesta en formato JSON. Esto es útil para depuración y seguimiento de las operaciones realizadas.
+7. **Compatibilidad y <Advertencias></Advertencias>
+
+   - El código incluye una advertencia para los usuarios que intenten abrir el archivo HTML directamente desde el sistema de archivos (file://), indicando que deben abrirlo desde un servidor Spring Boot para que la API funcione <correctamente class="notice"></correctamente>
+//En resumen, este código proporciona una interfaz web para gestionar el alquiler de vehículos, permitiendo a los usuarios registrar vehículos y clientes, crear y finalizar alquileres, y consultar registros existentes, todo mientras interactúa con una API backend para almacenar y recuperar <datos class="notice"></datos>
